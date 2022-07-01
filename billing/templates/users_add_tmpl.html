@@ -1,0 +1,27 @@
+<table class="table table-striped" style="width:1000px">
+        <thead><tr class="table-primary">
+        <th scope="col"  style="width:200px">Пользователь</th>
+        <th>E-Mail</th>
+        <th>Роль</th>
+        <th>Пароль</th>
+        <th></th>
+        </tr></thead><tbody>
+        <form method="POST" class="post-form">{% csrf_token %}
+        <tr>
+        <td>{{ userform.name }}</td>
+        <td>{{ userform.email }}</td>
+        <td>{{ userform.role }}</td>
+        <td>{{ userform.password }}</td>
+        <td><button type="submit" class="btn btn-primary btn-sm">OK</button></td>
+        </tr>
+        {% for user in userlist %}
+        <tr>
+          <td class="table-primary">{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td></td><td></td>
+        </tr>
+        {% endfor %}
+        </form>
+        </tbody>
+</table>

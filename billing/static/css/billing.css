@@ -1,0 +1,86 @@
+h1 a {
+    color: #52b0ba;
+    font-family: 'Girassol';
+}
+body {
+    padding-left: 0;
+}
+.page-header {
+    background-color: #9dc7cf;
+    margin-top: 0;
+    padding: 10px 10px 10px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #000000;
+}
+
+.server-text {
+    width: 100px;
+    height: 20px;
+    font-size: 11px;
+}
+.server-number {
+    width: 50px;
+    height: 20px;
+    font-size: 11px;
+}
+.pool-text {
+    height: 20px;
+    font-size: 11px;
+}
+.pool-drop {
+    height: 20px;
+    font-size: 11px;
+}
+.main-table {
+    margin-top: 50px;
+    font-size: 11px;
+}
+.main-td {
+    padding-left: 50px;
+}
+.user-tenant {
+    color: #ffffff;
+    font-size: 15;
+}
+.messages-error {
+    background-color: #f54747;
+}
+.messages-success {
+    background-color: #22e05b;
+}

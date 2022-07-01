@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<table style="width:1500px"><tr><td>
+<table class="table table-striped" style="width:1000px">
+        <thead><tr class="table-primary">
+        <th scope="col"  style="width:200px">Проект</th>
+        <th>Использовано, ГБ</th>
+        <th>Квота, ГБ</th>
+        <th>
+           <a class="btn btn-primary btn-sm" role="button" href="{% url 'project_edit' pr=name %}">Изменить</a>
+           <a class="btn btn-danger btn-sm" role="button" href="{% url 'project_delete' prjid=projectid %}">Удалить</a>
+        </th>
+        </tr></thead><tbody>
+        <tr>
+          <td class="table-primary">{{ name }}</td>
+          <td>{{ usedgb }}</td>
+          <td>{{ quotagb }}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Описание</td>
+          <td colspan="3">{{ prjdesc }}</td>
+        </tr>
+        </tbody>
+</table></td><td style="width:100px"></td><td>
+
+<form method="POST" class="post-form">{% csrf_token %}
+<table class="table table-striped">
+        <thead><tr class="table-primary">
+        <th colspan="3">Суммарный трафик за месяц</th></tr>
+        <th>Трафик, ГБ</th>
+        <th>Выбрать месяц</th>
+        <th><button type="submit" class="btn btn-primary btn-sm">Расчет</button></th>
+        </thead><tbody>
+        <tr>
+          <td>{{ totalgb }}</td>
+          <td colspan="2">{{ dateform.year }}{{ dateform.month }}</td>
+        </tr></tbody>
+</table>
+</form>
+
+</td></tr></table>
+
+{% include "users_tmpl.html" %}
+
+{% endblock %}

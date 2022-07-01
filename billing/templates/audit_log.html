@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="main-table">
+    <tr>
+        <td valign="top" style="padding-left:50px">
+<table class="table table-striped" style="width:1400px">
+        <thead><tr class="table-primary">
+        <th>Время</th>
+        <th>Пользователь</th>
+        <th>Тип изменения</th>
+        <th>Тип объекта</th>
+        <th>Объект</th>
+        <th>Описание</th>
+        </tr></thead><tbody>
+        {% for event in audit %}
+        <tr>
+        <td>{{ event.datetime|date:'d.m.Y H:i:s' }}</td>
+        <td>{{ event.user }}</td>
+        <td>{{ event.type }}</td>
+        <td>{{ event.objtype }}</td>
+        <td>{{ event.object }}</td>
+        <td>{{ event.details }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+</table>
+{% endblock %}

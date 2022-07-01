@@ -1,0 +1,21 @@
+<table class="table table-striped" style="width:1000px">
+        <thead><tr class="table-primary">
+        <th scope="col"  style="width:200px">Пользователь</th>
+        <th>Email</th>
+        <th>Роль</th>
+        <th><a class="btn btn-success btn-sm" role="button" href="{% url 'user_add' pr=name %}">Создать</a></th>
+        </tr></thead><tbody>
+        {% for user in userlist %}
+        <tr>
+          <td class="table-primary">{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+             <a class="btn btn-primary btn-sm" role="button" href="{% url 'user_edit' pr=name usrid=user.id %}">Изменить</a>
+             <a class="btn btn-warning btn-sm" role="button" href="{% url 'user_unassign' prjid=projectid usrid=user.id roleid=user.roleid %}">Снять роль</a>
+             <a class="btn btn-danger btn-sm" role="button" href="{% url 'user_delete' usr=user.id %}">Удалить</a>
+          </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+</table>

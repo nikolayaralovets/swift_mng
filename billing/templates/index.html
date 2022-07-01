@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="main-table">
+    <tr>
+        <td valign="top" style="padding-left:50px">
+<table style="width:400px">
+        <tr><td>
+        <a class="btn btn-primary btn-lg" role="button" href="{% url 'project_list' %}">Список проектов</a></h1>
+        </td><td>
+        <a class="btn btn-primary btn-lg" role="button" href="{% url 'audit_log' %}">Журнал изменений</a></h1>
+        </td></tr>
+</table>
+{% endblock %}

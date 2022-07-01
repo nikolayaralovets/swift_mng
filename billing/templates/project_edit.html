@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<form method="POST" class="post-form">{% csrf_token %}
+<table class="table table-striped" style="width:800px">
+        <thead><tr class="table-primary">
+        <th scope="col"  style="width:200px">Проект</th>
+        <th>Квота, ГБ</th>
+        <th>Описание</th>
+        <th></th>
+        </tr></thead><tbody>
+        <tr>
+          <td class="table-primary">{{ projectform.name }}</td>
+          <td>{{ projectform.quota }}</td>
+          <td>{{ projectform.desc }}</td>
+          <td><button type="submit" class="btn btn-primary btn-sm">Изменить</button></td>
+        </tr>
+        </tbody>
+</table></form>
+
+{% endblock %}

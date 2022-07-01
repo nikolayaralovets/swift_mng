@@ -1,0 +1,39 @@
+{% load static %}
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Girassol&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/billing.css' %}">
+    {% block header %}
+    {% endblock %}
+    <title>Swift billing</title>
+  </head>
+   <body>
+        {% if messages %}
+        {% for message in messages %}
+                <div {% if message.tags %} class="messages-{{ message.tags }}"{% endif %}>{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+    <div class="page-header">
+        <table width="100%"><tr><td>
+        <h1><a href="/"><img src="{% static 'img/swift-logo.png' %}" alt="Swift billing"></a></h1></td>
+{% if user.is_authenticated %}
+    <td width="100px"></td>
+    <td width="100px" style="text-align:left">
+    <div class="user-tenant" align="right">User: {{ loggeduser }}
+     <a class="btn btn-secondary btn-sm" role="button" href="/accounts/logout">Logout</a>
+   </td>
+{% endif %}
+</tr></table>
+   </div>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+   </body>
+</html>

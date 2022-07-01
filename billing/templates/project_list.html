@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<table class="table table-striped" style="width:800px">
+    <thead>
+        <tr class="table-primary">
+            <th class="table-primary">Название</th>
+            <th>Описание</th>
+            <th><a class="btn btn-success btn-sm" role="button" href="{% url 'project_add' %}">Создать</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for prj in projects %}
+        <tr>
+        <td class="table-primary"><p>{{ prj.name }}</p></td>
+        <td style="font-size:13px"><p>{{ prj.desc }}</p></td>
+        <td><a class="btn btn-primary btn-sm" role="button" href="{% url 'project_view' pr=prj.name %}">Просмотр</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

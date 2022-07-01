@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<form method="POST" class="post-form">{% csrf_token %}
+<table class="table table-striped" style="width:1000px">
+        <thead><tr class="table-primary">
+        <th scope="col"  style="width:200px">Проект</th>
+        <th>Использовано, ГБ</th>
+        <th>Квота, ГБ</th>
+        </tr></thead><tbody>
+        <tr>
+          <td class="table-primary">{{ name }}</td>
+          <td>{{ usedgb }}</td>
+          <td colspan="4">{{ quotagb }}</td>
+        </tr>
+        <tr>
+          <td>Описание</td>
+          <td colspan="3">{{ prjdesc }}</td>
+        </tr>
+        </tbody>
+</table></form>
+
+{% include "users_add_tmpl.html" %}
+
+{% endblock %}
